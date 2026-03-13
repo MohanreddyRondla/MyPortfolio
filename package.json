@@ -1,0 +1,18 @@
+{
+  "name": "portfolio-fullstack",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:backend dev:frontend",
+    "dev:frontend": "npm --workspace frontend run dev",
+    "dev:backend": "npm --workspace backend run dev",
+    "build": "npm --workspace frontend run build && npm --workspace backend run build",
+    "start": "npm --workspace backend run start"
+  },
+  "devDependencies": {
+    "npm-run-all": "4.1.5"
+  }
+}
