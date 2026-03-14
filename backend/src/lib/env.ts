@@ -5,16 +5,16 @@ function parseBoolean(value: string | undefined, fallback = false) {
 
 export const env = {
   port: Number(process.env.PORT || 4000),
-  frontendOrigin: process.env.FRONTEND_ORIGIN || 'http://localhost:5173',
-  databaseUrl: process.env.DATABASE_URL || '',
-  adminKey: process.env.ADMIN_DASHBOARD_KEY || '',
-  smtpHost: process.env.SMTP_HOST || '',
+  frontendOrigin: process.env.FRONTEND_ORIGIN || "*",
+  adminDashboardKey: process.env.ADMIN_DASHBOARD_KEY || "",
+  databaseUrl: process.env.DATABASE_URL || "",
+  smtpHost: process.env.SMTP_HOST || "",
   smtpPort: Number(process.env.SMTP_PORT || 587),
-  smtpSecure: parseBoolean(process.env.SMTP_SECURE, false),
-  smtpUser: process.env.SMTP_USER || '',
-  smtpPass: process.env.SMTP_PASS || '',
-  emailFrom: process.env.EMAIL_FROM || '',
-  notifyTo: process.env.NOTIFY_TO || '',
+  smtpSecure: process.env.SMTP_SECURE === "true",
+  smtpUser: process.env.SMTP_USER || "",
+  smtpPass: process.env.SMTP_PASS || "",
+  emailFrom: process.env.EMAIL_FROM || "",
+  notifyTo: process.env.NOTIFY_TO || "",
 };
 
 export function isEmailConfigured() {
