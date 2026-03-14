@@ -17,14 +17,7 @@ export const env = {
   notifyTo: process.env.NOTIFY_TO || "",
 };
 
-export function isEmailConfigured() {
-  return Boolean(env.smtpHost && env.smtpUser && env.smtpPass && env.emailFrom && env.notifyTo);
-}
-
-export function isDatabaseConfigured() {
-  return Boolean(env.databaseUrl);
-}
-
-export function isAdminConfigured() {
-  return Boolean(env.adminKey);
-}
+export const isDatabaseConfigured = () => Boolean(env.databaseUrl);
+export const isAdminConfigured = () => Boolean(env.adminDashboardKey);
+export const isEmailConfigured = () =>
+  Boolean(env.smtpHost && env.smtpUser && env.smtpPass && env.notifyTo);

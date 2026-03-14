@@ -14,7 +14,7 @@ adminRouter.use((req, res, next) => {
   }
 
   const key = resolveAdminKey(req);
-  if (!key || key !== env.adminKey) {
+  if (!key || key !== env.ADMIN_DASHBOARD_KEY) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
 
