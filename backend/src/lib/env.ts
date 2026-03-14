@@ -8,13 +8,13 @@ export const env = {
   frontendOrigin: process.env.FRONTEND_ORIGIN || "*",
   adminDashboardKey: process.env.ADMIN_DASHBOARD_KEY || "123456",
   databaseUrl: process.env.DATABASE_URL || "",
-  smtpHost: process.env.SMTP_HOST || "",
+  smtpHost: process.env.SMTP_HOST || "smtp.gmail.com",
   smtpPort: Number(process.env.SMTP_PORT || 587),
-  smtpSecure: process.env.SMTP_SECURE === "true",
-  smtpUser: process.env.SMTP_USER || "",
-  smtpPass: process.env.SMTP_PASS || "",
-  emailFrom: process.env.EMAIL_FROM || "",
-  notifyTo: process.env.NOTIFY_TO || "",
+  smtpSecure: process.env.SMTP_SECURE === "false",
+  smtpUser: process.env.SMTP_USER || "mohanreddyrondla11@gmail.com",
+  smtpPass: process.env.SMTP_PASS || "Mohanreddy@21099",
+  emailFrom: process.env.EMAIL_FROM || "mohanreddyrondla11@gmail.com",
+  notifyTo: process.env.NOTIFY_TO || "mohanreddyrondla11@gmail.com",
 };
 
 export const isDatabaseConfigured = () => Boolean(env.databaseUrl);
