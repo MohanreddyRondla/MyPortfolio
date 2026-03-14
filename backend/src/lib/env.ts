@@ -6,7 +6,7 @@ function parseBoolean(value: string | undefined, fallback = false) {
 export const env = {
   port: Number(process.env.PORT || 4000),
   frontendOrigin: process.env.FRONTEND_ORIGIN || "*",
-  adminDashboardKey: process.env.ADMIN_DASHBOARD_KEY || "",
+  adminDashboardKey: process.env.ADMIN_DASHBOARD_KEY || "123456",
   databaseUrl: process.env.DATABASE_URL || "",
   smtpHost: process.env.SMTP_HOST || "",
   smtpPort: Number(process.env.SMTP_PORT || 587),

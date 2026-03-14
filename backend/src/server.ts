@@ -32,7 +32,12 @@ app.get("/api/health", (_req, res) => {
     adminDashboard: isAdminConfigured(),
   });
 });
-
+app.get('/api/debug-env', (_req, res) => {
+  res.json({
+    hasAdminKey: Boolean(process.env.ADMIN_DASHBOARD_KEY),
+    adminKeyLength: process.env.ADMIN_DASHBOARD_KEY?.length || 0
+  });
+});
 app.use("/api/portfolio", portfolioRouter);
 app.use("/api/contact", contactRouter);
 app.use("/api/admin", adminRouter);
